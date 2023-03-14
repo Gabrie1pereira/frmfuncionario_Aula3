@@ -30,21 +30,25 @@
         {
             this.btncalcular = new System.Windows.Forms.Button();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtValorhora = new System.Windows.Forms.TextBox();
-            this.txtHorastrabalhadas = new System.Windows.Forms.TextBox();
+            this.txtValorDiaria = new System.Windows.Forms.TextBox();
+            this.txtDiasTrabalhadas = new System.Windows.Forms.TextBox();
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.LNOME = new System.Windows.Forms.Label();
             this.LCPF = new System.Windows.Forms.Label();
             this.LValorH = new System.Windows.Forms.Label();
             this.LHorasTRABALHADAS = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.LsalarioBase = new System.Windows.Forms.Label();
+            this.txtValorIR = new System.Windows.Forms.TextBox();
+            this.txtSalario_Liquido = new System.Windows.Forms.TextBox();
+            this.LvlIr = new System.Windows.Forms.Label();
+            this.Lsalario = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btncalcular
             // 
             this.btncalcular.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btncalcular.Location = new System.Drawing.Point(271, 316);
+            this.btncalcular.Location = new System.Drawing.Point(271, 327);
             this.btncalcular.Name = "btncalcular";
             this.btncalcular.Size = new System.Drawing.Size(103, 31);
             this.btncalcular.TabIndex = 0;
@@ -59,24 +63,24 @@
             this.txtNome.Size = new System.Drawing.Size(280, 23);
             this.txtNome.TabIndex = 1;
             // 
-            // txtValorhora
+            // txtValorDiaria
             // 
-            this.txtValorhora.Location = new System.Drawing.Point(118, 162);
-            this.txtValorhora.Name = "txtValorhora";
-            this.txtValorhora.Size = new System.Drawing.Size(188, 23);
-            this.txtValorhora.TabIndex = 2;
+            this.txtValorDiaria.Location = new System.Drawing.Point(105, 121);
+            this.txtValorDiaria.Name = "txtValorDiaria";
+            this.txtValorDiaria.Size = new System.Drawing.Size(78, 23);
+            this.txtValorDiaria.TabIndex = 2;
             // 
-            // txtHorastrabalhadas
+            // txtDiasTrabalhadas
             // 
-            this.txtHorastrabalhadas.Location = new System.Drawing.Point(168, 264);
-            this.txtHorastrabalhadas.Name = "txtHorastrabalhadas";
-            this.txtHorastrabalhadas.Size = new System.Drawing.Size(138, 23);
-            this.txtHorastrabalhadas.TabIndex = 3;
+            this.txtDiasTrabalhadas.Location = new System.Drawing.Point(476, 121);
+            this.txtDiasTrabalhadas.Name = "txtDiasTrabalhadas";
+            this.txtDiasTrabalhadas.Size = new System.Drawing.Size(60, 23);
+            this.txtDiasTrabalhadas.TabIndex = 3;
             // 
             // txtSalario
             // 
             this.txtSalario.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtSalario.Location = new System.Drawing.Point(513, 165);
+            this.txtSalario.Location = new System.Drawing.Point(295, 184);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.ReadOnly = true;
             this.txtSalario.Size = new System.Drawing.Size(113, 23);
@@ -114,46 +118,88 @@
             // 
             this.LValorH.AutoSize = true;
             this.LValorH.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LValorH.Location = new System.Drawing.Point(6, 162);
+            this.LValorH.Location = new System.Drawing.Point(6, 120);
             this.LValorH.Name = "LValorH";
-            this.LValorH.Size = new System.Drawing.Size(110, 20);
+            this.LValorH.Size = new System.Drawing.Size(93, 20);
             this.LValorH.TabIndex = 8;
-            this.LValorH.Text = "Salario P/Hora";
+            this.LValorH.Text = "Valor/Diaria";
             // 
             // LHorasTRABALHADAS
             // 
             this.LHorasTRABALHADAS.AutoSize = true;
             this.LHorasTRABALHADAS.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LHorasTRABALHADAS.Location = new System.Drawing.Point(6, 264);
+            this.LHorasTRABALHADAS.Location = new System.Drawing.Point(326, 123);
             this.LHorasTRABALHADAS.Name = "LHorasTRABALHADAS";
-            this.LHorasTRABALHADAS.Size = new System.Drawing.Size(154, 21);
+            this.LHorasTRABALHADAS.Size = new System.Drawing.Size(144, 21);
             this.LHorasTRABALHADAS.TabIndex = 9;
-            this.LHorasTRABALHADAS.Text = "Horas Trabalhadas ";
+            this.LHorasTRABALHADAS.Text = "Dias  Trabalhados";
             // 
-            // label5
+            // LsalarioBase
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(360, 165);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 21);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Pretensão Salarial";
+            this.LsalarioBase.AutoSize = true;
+            this.LsalarioBase.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LsalarioBase.Location = new System.Drawing.Point(134, 187);
+            this.LsalarioBase.Name = "LsalarioBase";
+            this.LsalarioBase.Size = new System.Drawing.Size(106, 21);
+            this.LsalarioBase.TabIndex = 10;
+            this.LsalarioBase.Text = "Salario Base ";
+            // 
+            // txtValorIR
+            // 
+            this.txtValorIR.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtValorIR.Location = new System.Drawing.Point(295, 231);
+            this.txtValorIR.Name = "txtValorIR";
+            this.txtValorIR.Size = new System.Drawing.Size(113, 23);
+            this.txtValorIR.TabIndex = 11;
+            this.txtValorIR.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // txtSalario_Liquido
+            // 
+            this.txtSalario_Liquido.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtSalario_Liquido.Location = new System.Drawing.Point(295, 280);
+            this.txtSalario_Liquido.Name = "txtSalario_Liquido";
+            this.txtSalario_Liquido.Size = new System.Drawing.Size(113, 23);
+            this.txtSalario_Liquido.TabIndex = 12;
+            this.txtSalario_Liquido.TextChanged += new System.EventHandler(this.txtSalario_Liquido_TextChanged);
+            // 
+            // LvlIr
+            // 
+            this.LvlIr.AutoSize = true;
+            this.LvlIr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LvlIr.Location = new System.Drawing.Point(134, 233);
+            this.LvlIr.Name = "LvlIr";
+            this.LvlIr.Size = new System.Drawing.Size(93, 21);
+            this.LvlIr.TabIndex = 13;
+            this.LvlIr.Text = "Valor do IR";
+            // 
+            // Lsalario
+            // 
+            this.Lsalario.AutoSize = true;
+            this.Lsalario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Lsalario.Location = new System.Drawing.Point(134, 282);
+            this.Lsalario.Name = "Lsalario";
+            this.Lsalario.Size = new System.Drawing.Size(129, 21);
+            this.Lsalario.TabIndex = 14;
+            this.Lsalario.Text = "Salario Liquido ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 370);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.Lsalario);
+            this.Controls.Add(this.LvlIr);
+            this.Controls.Add(this.txtSalario_Liquido);
+            this.Controls.Add(this.txtValorIR);
+            this.Controls.Add(this.LsalarioBase);
             this.Controls.Add(this.LHorasTRABALHADAS);
             this.Controls.Add(this.LValorH);
             this.Controls.Add(this.LCPF);
             this.Controls.Add(this.LNOME);
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.txtSalario);
-            this.Controls.Add(this.txtHorastrabalhadas);
-            this.Controls.Add(this.txtValorhora);
+            this.Controls.Add(this.txtDiasTrabalhadas);
+            this.Controls.Add(this.txtValorDiaria);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.btncalcular);
             this.MaximizeBox = false;
@@ -169,14 +215,18 @@
 
         private Button btncalcular;
         private TextBox txtNome;
-        private TextBox txtValorhora;
-        private TextBox txtHorastrabalhadas;
+        private TextBox txtValorDiaria;
+        private TextBox txtDiasTrabalhadas;
         private TextBox txtSalario;
         private TextBox txtCPF;
         private Label LNOME;
         private Label LCPF;
         private Label LValorH;
         private Label LHorasTRABALHADAS;
-        private Label label5;
+        private Label LsalarioBase;
+        private TextBox txtValorIR;
+        private TextBox txtSalario_Liquido;
+        private Label LvlIr;
+        private Label Lsalario;
     }
 }
